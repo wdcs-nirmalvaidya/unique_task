@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="edit-page">
+    <h1>Edit Book</h1>
+
+    <div class="form-container">
+      <form id="edit-book-form">
+        <input type="hidden" id="edit-book-index">
+
+   
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-title">Title</label>
+            <input type="text" id="edit-title" placeholder="Enter book title" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-author">Author</label>
+            <input type="text" id="edit-author" placeholder="Enter author name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-genre">Genre</label>
+            <input type="text" id="edit-genre" placeholder="Enter genre">
+          </div>
+          <div class="form-group">
+            <label for="edit-price">Price</label>
+            <input type="number" id="edit-price" min="0" placeholder="Enter price" required>
+          </div>
+        </div>
+
+    
+        <fieldset>
+          <legend>Publisher Details</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-publisher-name">Name</label>
+              <input type="text" id="edit-publisher-name" placeholder="Publisher name">
+            </div>
+            <div class="form-group">
+              <label for="edit-address-city">City</label>
+              <input type="text" id="edit-address-city" placeholder="City">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-address-country">Country</label>
+              <input type="text" id="edit-address-country" placeholder="Country">
+            </div>
+            <div class="form-group">
+              <label for="edit-contact-email">Email</label>
+              <input type="email" id="edit-contact-email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-contact-phone">Phone</label>
+            <input type="tel" id="edit-contact-phone" placeholder="Phone number">
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <a href="index.html" class="button button-secondary">Cancel</a>
+          <button type="submit" class="button button-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>        
+  </div>
+
+  <script src="edit-book.js"></script>
+</body>
+</html>

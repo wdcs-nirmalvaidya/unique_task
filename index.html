@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <h1>Book Collection</h1>
+
+  <div class="table-container">
+    <div class="table-controls">
+      <div class="form-row">
+        <input type="text" id="searchTitle" onkeyup="filterBooks()" placeholder="Search by Title">
+        <select id="priceRange" onchange="filterBooks()">
+          <option value="all">All Prices</option>
+          <option value="0-300">₹0 - ₹300</option>
+          <option value="301-500">₹301 - ₹500</option>
+          <option value="501-200">Over ₹500</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <a href="add-book.html" class="button button-primary">Add New Book</a>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th data-column="title" onclick="sortTableBy('title')">Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Publisher</th>
+          <th data-column="price" onclick="sortTableBy('price')">Price</th>
+          <th data-column="rating" onclick="sortTableBy('rating')">Rating</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="bookList">
+        </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

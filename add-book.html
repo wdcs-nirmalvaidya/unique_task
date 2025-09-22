@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Add New Book</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-box">
+        <h1>Add New Book</h1>
+        <form id="addBookForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+               <input type="text" id="genre" placeholder="Genre">
+            <input type="number" id="price" placeholder="Price" required>
+            <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5" required>
+               <p id="error" class="error-message"></p>
+            <button type="submit">Add Book</button>
+        </form>
+        <a href="index.html" class="back-link">← Back to Book List</a>
+    </div>
+
+    <script src="add-book.js"></script>
+</body>
+</html>
