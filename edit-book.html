@@ -15,7 +15,6 @@
       <form id="edit-book-form">
         <input type="hidden" id="edit-book-index">
 
-   
         <div class="form-row">
           <div class="form-group">
             <label for="edit-title">Title</label>
@@ -38,9 +37,16 @@
           </div>
         </div>
 
-    
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-rating">Average Rating</label>
+            <input type="number" id="edit-rating" min="0" max="5" readonly>
+          </div>
+        </div>
+
         <fieldset>
           <legend>Publisher Details</legend>
+
           <div class="form-row">
             <div class="form-group">
               <label for="edit-publisher-name">Name</label>
@@ -51,6 +57,7 @@
               <input type="text" id="edit-address-city" placeholder="City">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="edit-address-country">Country</label>
@@ -61,16 +68,27 @@
               <input type="email" id="edit-contact-email" placeholder="Email">
             </div>
           </div>
-          <div class="form-group">
-            <label for="edit-contact-phone">Phone</label>
-            <input type="tel" id="edit-contact-phone" placeholder="Phone number">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-contact-phone">Phone</label>
+              <input type="tel" id="edit-contact-phone" placeholder="Phone number">
+            </div>
           </div>
         </fieldset>
+
+            <div class="form-row">
+          <div class="form-group">
+            <label>Review Distribution</label>
+            <canvas id="bookReviewChart" width="500" height="200"></canvas>
+          </div>
+        </div>
 
         <div class="form-actions">
           <a href="index.html" class="button button-secondary">Cancel</a>
           <button type="submit" class="button button-primary">Save Changes</button>
         </div>
+
       </form>
     </div>        
   </div>

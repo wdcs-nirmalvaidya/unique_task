@@ -1,3 +1,4 @@
+
 :root {
 
   --bg-color: #2b7eb6;
@@ -257,6 +258,7 @@ thead th i.icon-visible {
     border-color: var(--primary);
     outline: none;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+
 }
 
 .form-box button {
@@ -291,4 +293,6 @@ thead th i.icon-visible {
 
 .back-link:hover {
     text-decoration: underline;
+
 }
+
