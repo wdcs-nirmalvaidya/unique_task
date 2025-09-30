@@ -138,6 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.strokeStyle = '#000';
         ctx.stroke();
     }
-//
+
     drawBookReviewGraph(bookToEdit);
 });
