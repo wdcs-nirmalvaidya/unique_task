@@ -470,7 +470,7 @@ function displayBooks(list = books) {
   }
 
   function updateSortIndicators() {
-    document.querySelectorAll("th[data-column]").forEach(th => {
+    document.querySelectorAll("th[data-column]").forEach(th => {  
       let icon = th.querySelector("i.fa-solid");
       if (!icon) {
         icon = document.createElement("i");
@@ -488,4 +488,47 @@ function displayBooks(list = books) {
   }
   displayBooks();
 
+  function startVoiceSearch() {
+  // 1. Check if the browser supports the API
+  if (!('webkitSpeechRecognition' in window)) {
+      alert("Sorry, your browser doesn't support voice search.");
+      return; // Stop if not supported
+  }
 
+  // 2. Create and configure the recognition instance
+  const recognition = new webkitSpeechRecognition();
+  recognition.lang = 'en-US';
+
+  const searchInput = document.getElementById('searchTitle');
+  const voiceBtn = document.getElementById('voiceSearchBtn');
+
+  // Provide visual feedback that listening has started
+  recognition.onstart = () => {
+      voiceBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+  };
+
+  // 3. When speech is recognized, put it in the search bar
+  recognition.onresult = (event) => {
+      console.log("Event Log: ", event);
+      
+      const transcript = event.results[0][0].transcript;
+      searchInput.value = transcript;
+      
+      // 4. IMPORTANT: Trigger the 'keyup' event to run your filterBooks() function
+      searchInput.dispatchEvent(new Event('keyup'));
+  };
+
+  // Handle any errors and reset the button
+  recognition.onerror = (event) => {
+      console.error("Voice recognition error:", event.error);
+      voiceBtn.innerHTML = '<i class="fa-solid fa-microphone"></i>';
+  };
+
+  // When recognition ends, reset the buttontranscript
+  recognition.onend = () => {
+      voiceBtn.innerHTML = '<i class="fa-solid fa-microphone"></i>';
+  };
+
+  // 5. Start listening for the user's voice
+  recognition.start();
+}

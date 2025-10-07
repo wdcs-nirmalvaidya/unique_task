@@ -13,15 +13,20 @@
 
   <div class="table-container">
     <div class="table-controls">
-      <div class="form-row">
-        <input type="text" id="searchTitle" onkeyup="filterBooks()" placeholder="Search by Title">
-        <select id="priceRange" onchange="filterBooks()">
-          <option value="all">All Prices</option>
-          <option value="0-300">₹0 - ₹300</option>
-          <option value="301-500">₹301 - ₹500</option>
-          <option value="501-200">Over ₹500</option>
-        </select>
-      </div>
+ <div class="form-row">
+  <input type="text" id="searchTitle" onkeyup="filterBooks()" placeholder="Search by Title">
+  
+  <button id="voiceSearchBtn" onclick="startVoiceSearch()" class="voice-btn" title="Search by Voice">
+    <i class="fa-solid fa-microphone"></i>
+  </button>
+  
+  <select id="priceRange" onchange="filterBooks()">
+    <option value="all">All Prices</option>
+    <option value="0-300">₹0 - ₹300</option>
+    <option value="301-500">₹301 - ₹500</option>
+    <option value="501-200">Over ₹500</option>
+  </select>
+</div>
       <div class="form-row">
         <a href="add-book.html" class="button button-primary">Add New Book</a>
       </div>

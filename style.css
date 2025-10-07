@@ -295,4 +295,16 @@ thead th i.icon-visible {
     text-decoration: underline;
 
 }
+.voice-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0 10px;
+  vertical-align: middle; /* Helps with alignment */
+}
 
+.voice-btn:hover {
+  color: #000;
+}
